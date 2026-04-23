@@ -1,0 +1,20 @@
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+
+# Ruby/Bundler
+bin/
+.bundle/
+vendor/
+
+# OS specific
+.DS_Store
+Thumbs.db
+db.json
+
+# IDEs
+.idea/
+.vscode/
+*.swp
+*.swo

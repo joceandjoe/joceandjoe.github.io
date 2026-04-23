@@ -1,0 +1,11 @@
+# frozen_string_literal: true
+
+source "https://rubygems.org"
+
+# gem "rails"
+
+gem "github-pages", "~> 232", group: :jekyll_plugins
+
+gem "wdm", "~> 0.2.0"
+
+gem "fiddle", "~> 1.1"
