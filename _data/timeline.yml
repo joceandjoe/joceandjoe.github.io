@@ -1,16 +1,52 @@
 # Add your milestones here! 
 # You can add as many as you want.
-- title: "Where it all started"
+#
+# Per-slide image & layout options (all optional):
+#   card_position: top | middle | bottom   (default: middle)
+#   bg_position:   any CSS background-position value (default: "center")
+#   bg_size:       any CSS background-size value     (default: "cover")
+#   bg_repeat:     any CSS background-repeat value   (default: "no-repeat")
+#   blurred_mirror: true | false  — fills gaps (e.g. portrait photo on landscape screen)
+#                                   with a blurred, darkened copy of the image (default: false)
+
+- title: "Computer Science Classes"
   date: "Spring 2024"
-  description: "We met at Southern Virginia University (SVU). It didn't take long to realize we were meant for each other."
-  image: "img/IMG_0838.JPG" # You can change these to specific milestone photos later
+  description: "We met in Dr. Griffith's Computer Science classes at Southern Virginia University (SVU). We are both CS majors, so we saw each other every day."
+  image: "img/cs-class-screen.jpg"
+  card_position: middle
+  bg_position: "center"
+  bg_size: "cover"
+  bg_repeat: "no-repeat"
+  blurred_mirror: false
 
 - title: "The First Date"
   date: "September 2024"
   description: "A simple evening that turned into hours of talking and laughing."
   image: "img/IMG_0841.JPG"
+  card_position: middle
+  bg_position: "center"
+  bg_size: "cover"
+  bg_repeat: "no-repeat"
+  blurred_mirror: false
+
+- title: '"You are a 10/10!"'
+  date: "October 10 2024"
+  description: >
+    "In honor of the days date, I gave Jocelyn 10 origami stars and a note that said, 
+    'Are you today's date because you are a 10/10!'" —Joe
+  image: "img/1010stars.jpg"
+  card_position: bottom
+  bg_position: "center"
+  bg_size: "contain"
+  bg_repeat: "no-repeat"
+  blurred_mirror: true
 
 - title: "She said Yes!"
   date: "December 2025"
   description: "The moment we decided on forever."
   image: "img/IMG_0838.JPG"
+  card_position: middle
+  bg_position: "center"
+  bg_size: "cover"
+  bg_repeat: "no-repeat"
+  blurred_mirror: false

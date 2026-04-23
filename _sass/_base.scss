@@ -226,7 +226,7 @@ header {
 
             // Position dynamically above the nav bar
             position: absolute;
-            bottom: calc(var(--nav-height) + 60px); 
+            bottom: calc(var(--nav-height) + 60px);
             left: 0;
             right: 0;
             margin-top: 0;
@@ -454,14 +454,14 @@ body {
 // Wedding Navigation Bar
 .wedding-nav {
     min-height: var(--nav-height);
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(255, 255, 255, 0.9);
     border: none;
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
     margin-bottom: 0;
     min-height: 60px;
 
     .nav>li>a {
-        color: white;
+        color: $theme-dark;
         text-transform: uppercase;
         font-weight: 700;
         font-size: 12px;
@@ -479,6 +479,7 @@ body {
 // On desktop (≥768px) it always shows like the home nav.
 
 .nav-inner-page {
+
     // Desktop: always visible as normal bar
     .nav-inner-menu {
         display: block;
@@ -503,8 +504,8 @@ body {
             bottom: -100%;
             right: 0;
             left: 0;
-            background-color: rgba(0, 0, 0, 0.95);
-            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            background-color: rgba(255, 255, 255, 0.98);
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
             transition: bottom 0.35s cubic-bezier(0.4, 0, 0.2, 1);
             z-index: 1049;
             padding-bottom: 80px; // space above hamburger button
@@ -529,6 +530,7 @@ body {
                         display: block;
                         padding: 16px 20px;
                         font-size: 14px;
+                        color: $theme-dark;
                     }
                 }
             }
@@ -551,8 +553,8 @@ body {
             z-index: 1050;
             width: 52px;
             height: 52px;
-            background-color: rgba(0, 0, 0, 0.85);
-            border: 1px solid rgba(255, 255, 255, 0.25);
+            background-color: rgba(255, 255, 255, 0.95);
+            border: 1px solid rgba(0, 0, 0, 0.1);
             border-radius: 50%;
             padding: 15px 14px;
             cursor: pointer;
@@ -561,7 +563,7 @@ body {
 
             &:hover,
             &:focus {
-                background-color: rgba(0, 0, 0, 0.95);
+                background-color: white;
                 outline: none;
             }
 
@@ -569,7 +571,7 @@ body {
                 display: block;
                 width: 100%;
                 height: 2px;
-                background: white;
+                background: $theme-dark;
                 border-radius: 2px;
                 transition: transform 0.25s, opacity 0.25s;
                 transform-origin: center;
@@ -580,10 +582,12 @@ body {
                 span:nth-child(1) {
                     transform: translateY(8px) rotate(45deg);
                 }
+
                 span:nth-child(2) {
                     opacity: 0;
                     transform: scaleX(0);
                 }
+
                 span:nth-child(3) {
                     transform: translateY(-8px) rotate(-45deg);
                 }
@@ -711,7 +715,7 @@ body {
 /* About Page & Snap Scrolling */
 .about-page {
     overflow: hidden; // Prevent double scrollbars
-    
+
     .snap-container {
         height: 100vh;
         overflow-y: scroll;
@@ -730,7 +734,7 @@ body {
         padding: 20px;
         background-size: cover;
         background-position: center;
-        color: white;
+        color: $theme-dark;
 
         .content-wrapper {
             max-width: 800px;
@@ -741,13 +745,13 @@ body {
 
     /* Intro Section */
     .intro-section {
-        background-color: #1a1a1a;
-        
+        background-color: #fcfaf7;
+
         h1 {
             font-size: clamp(2.5rem, 8vw, 4.5rem);
             margin-bottom: 20px;
         }
-        
+
         p {
             font-size: clamp(1.1rem, 3vw, 1.4rem);
             line-height: 1.8;
@@ -758,7 +762,7 @@ body {
             position: absolute;
             bottom: 100px;
             animation: bounce 2s infinite;
-            
+
             p {
                 font-size: 0.8rem;
                 text-transform: uppercase;
@@ -768,46 +772,118 @@ body {
         }
     }
 
-    /* Timeline Bar */
+    /* Timeline Section */
     .timeline-section {
+        // Remove any background set directly on the section element;
+        // backgrounds are now handled by .bg-blur-fill and .bg-main layers.
+        background: none !important;
+        overflow: hidden;
+
+        // --- Card position variants ---
+        // Default (.card-middle) uses the parent's align-items: center.
+        &.card-top {
+            align-items: flex-start;
+
+            .content-wrapper {
+                margin-top: 40px;
+            }
+
+            .timeline-bar::after {
+                top: 120px;
+            }
+        }
+
+        &.card-middle {
+            align-items: center;
+
+            .timeline-bar::after {
+                top: 50%;
+            }
+        }
+
+        &.card-bottom {
+            align-items: flex-end;
+
+            .content-wrapper {
+                margin-bottom: 80px;
+            }
+
+            // clear of nav bar
+            .timeline-bar::after {
+                top: auto;
+                bottom: 160px;
+            }
+        }
+
+        // --- Background layers ---
+
+        // Layer 1: Blurred mirror fill.
+        // Stretches to cover the whole section with a blurred, darkened copy of the
+        // image so any gaps left by a "contain" main image are hidden gracefully.
+        .bg-blur-fill {
+            position: absolute;
+            inset: -40px; // overshoot to hide blur soft-edges
+            background-size: cover;
+            background-position: center;
+            filter: blur(28px) brightness(0.9) saturate(1.2);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        // Layer 2: Main image with overlay.
+        // bg-size / bg-position / bg-repeat are set via inline style from YAML.
+        .bg-main {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        // Timeline bar and content must sit above both background layers.
+        .timeline-bar,
+        .content-wrapper {
+            position: relative;
+            z-index: 2;
+        }
+
         .timeline-bar {
             position: absolute;
             left: 50px;
             top: 0;
             bottom: 0;
             width: 2px;
-            background: rgba(255, 255, 255, 0.3);
-            
+            background: rgba(0, 0, 0, 0.1);
+
             &::after {
                 content: '';
                 position: absolute;
-                top: 50%;
                 left: -4px;
                 width: 10px;
                 height: 10px;
-                background: white;
+                background: $theme-dark;
                 border-radius: 50%;
-                box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+                box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
             }
         }
 
         .milestone-card {
-            background: rgba(0, 0, 0, 0.4);
+            background: rgba(255, 255, 255, 0.8);
             backdrop-filter: blur(10px);
             padding: 40px;
             border-radius: 15px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(0, 0, 0, 0.05);
             text-align: left;
+            color: $theme-dark;
 
             .milestone-date {
                 display: block;
                 font-family: 'Trirong', serif;
-                font-weight: 200;
+                font-weight: 400;
                 font-size: 1rem;
                 letter-spacing: 3px;
                 text-transform: uppercase;
                 margin-bottom: 10px;
-                color: rgba(255, 255, 255, 0.7);
+                color: lighten($theme-dark, 20%);
             }
 
             h2 {
@@ -822,19 +898,20 @@ body {
         }
     }
 
+
     /* Conclusion Section */
     .conclusion-section {
-        background-color: #1a1a1a;
-        
+        background-color: #fcfaf7;
+
         .back-to-top {
             display: inline-flex;
             flex-direction: column;
             align-items: center;
             margin-top: 40px;
-            color: white;
+            color: $theme-dark;
             text-decoration: none;
             transition: opacity 0.3s;
-            
+
             &:hover {
                 opacity: 0.7;
             }
@@ -854,9 +931,22 @@ body {
 }
 
 @keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
-    40% {transform: translateY(-10px);}
-    60% {transform: translateY(-5px);}
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-10px);
+    }
+
+    60% {
+        transform: translateY(-5px);
+    }
 }
 
 /* Mobile adjustments for timeline */
@@ -865,9 +955,11 @@ body {
         .timeline-bar {
             left: 20px;
         }
+
         .content-wrapper {
             padding-left: 30px;
         }
+
         .milestone-card {
             padding: 25px;
         }

@@ -10,7 +10,7 @@
         <section class="snap-section intro-section">
             <div class="content-wrapper">
                 <h1 class="trirong-bold">{{ page.title }}</h1>
-                <hr class="light">
+                <hr>
                 <p class="merriweather-light">{{ page.intro_text }}</p>
                 <div class="scroll-indicator">
                     <p>Swipe Down</p>
@@ -21,7 +21,22 @@
 
         <!-- Timeline sections -->
         {% for milestone in site.data.timeline %}
-        <section class="snap-section timeline-section" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('{{ milestone.image | relative_url }}');">
+        {% assign card_pos   = milestone.card_position | default: "middle" %}
+        {% assign bg_pos     = milestone.bg_position   | default: "center" %}
+        {% assign bg_size    = milestone.bg_size        | default: "cover" %}
+        {% assign bg_repeat  = milestone.bg_repeat      | default: "no-repeat" %}
+        <section class="snap-section timeline-section card-{{ card_pos }}">
+            <!-- Blurred mirror fill (visible only when main image leaves gaps) -->
+            {% if milestone.blurred_mirror %}
+            <div class="bg-blur-fill" style="background-image: url('{{ milestone.image | relative_url }}');"></div>
+            {% endif %}
+            <!-- Main image layer with overlay + custom bg options -->
+            <div class="bg-main" style="
+                background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('{{ milestone.image | relative_url }}');
+                background-size: {{ bg_size }};
+                background-position: {{ bg_pos }};
+                background-repeat: {{ bg_repeat }};
+            "></div>
             <div class="timeline-bar"></div>
             <div class="content-wrapper">
                 <div class="milestone-card">
@@ -32,6 +47,7 @@
             </div>
         </section>
         {% endfor %}
+
 
         <!-- Concluding Section -->
         <section class="snap-section conclusion-section">
