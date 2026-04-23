@@ -1,0 +1,16 @@
+# Add your milestones here! 
+# You can add as many as you want.
+- title: "Where it all started"
+  date: "Spring 2024"
+  description: "We met at Southern Virginia University (SVU). It didn't take long to realize we were meant for each other."
+  image: "img/IMG_0838.JPG" # You can change these to specific milestone photos later
+
+- title: "The First Date"
+  date: "September 2024"
+  description: "A simple evening that turned into hours of talking and laughing."
+  image: "img/IMG_0841.JPG"
+
+- title: "She said Yes!"
+  date: "December 2025"
+  description: "The moment we decided on forever."
+  image: "img/IMG_0838.JPG"

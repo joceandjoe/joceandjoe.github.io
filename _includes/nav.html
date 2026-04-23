@@ -1,0 +1,58 @@
+{% assign is_home = false %}
+{% if page.layout == 'front' or page.url == '/' %}
+    {% assign is_home = true %}
+{% endif %}
+
+<nav class="navbar navbar-default navbar-fixed-bottom wedding-nav{% unless is_home %} nav-inner-page{% endunless %}">
+    {% unless is_home %}
+    <button class="nav-hamburger" id="navHamburger" aria-label="Open navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+    <div class="nav-inner-menu" id="navInnerMenu">
+    {% endunless %}
+        <div class="container text-center">
+            <ul class="nav navbar-nav" style="display: inline-block; float: none;">
+                {% comment %}
+                {% if is_home %}
+                <li><a href="/about">Our Story</a></li>
+                {% else %}
+                <li><a href="/">Home</a></li>
+                {% endif %}
+                {% endcomment %}
+                <li><a href="https://ineedyouraddress.com/joceandjoe/" target="_blank" rel="noopener noreferrer">Share Your
+                        Address</a></li>
+                <li><a href="https://www.amazon.com/wedding/share/joceandjoe" target="_blank"
+                        rel="noopener noreferrer">Wedding Registry</a></li>
+                <li><a href="https://venmo.com/joceandjoe" target="_blank" rel="noopener noreferrer">Venmo:
+                        @joceandjoe</a></li>
+            </ul>
+        </div>
+    {% unless is_home %}
+    </div>
+    {% endunless %}
+</nav>
+
+{% unless is_home %}
+<script>
+(function() {
+    var btn = document.getElementById('navHamburger');
+    var menu = document.getElementById('navInnerMenu');
+    if (!btn || !menu) return;
+    btn.addEventListener('click', function() {
+        var open = menu.classList.toggle('is-open');
+        btn.classList.toggle('is-open', open);
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    // Close menu when a link is tapped
+    menu.querySelectorAll('a').forEach(function(link) {
+        link.addEventListener('click', function() {
+            menu.classList.remove('is-open');
+            btn.classList.remove('is-open');
+            btn.setAttribute('aria-expanded', 'false');
+        });
+    });
+})();
+</script>
+{% endunless %}
