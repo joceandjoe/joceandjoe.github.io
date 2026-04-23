@@ -1,14 +1,35 @@
-# Creative Theme for Jekyll
+# 💍 Joce & Joe's Wedding Website
 
-A Jekyll implementation of the [Creative Theme](http://startbootstrap.com/template-overviews/creative/) template by [Start Bootstrap](http://startbootstrap.com).
+Welcome! This is the repository for our official wedding website. It is hosted for free using GitHub Pages and was built with love to share our big day with friends and family.
 
-Creative is a one page Bootstrap theme for creatives, small businesses, and other multipurpose uses.
-The theme includes a number of rich features and plugins that you can use as a great boilerplate for your next Jekyll project! 
+## 🌐 Live Site
+You can view the live website here: 
+👉 **[https://joceandjoe.github.io](https://joceandjoe.github.io)**
 
-See it live in action at <https://volny.github.io/creative-theme-jekyll/>
+---
 
-## To use the Creative Theme template in your project
+## 🛠 Built With
+- **Host:** [GitHub Pages](https://pages.github.com/)
+- **Engine:** [Jekyll](https://jekyllrb.com/)
+- **Framework:** [Bootstrap](http://getbootstrap.com/)
+- **Fonts:** Trirong & Merriweather (Google Fonts)
 
-- Start by adding your info in `_config.yml`
-- In `_layouts/front.html` reorder or remove section as you prefer.
+---
 
+## ✍️ How to Update
+This site is a custom Jekyll theme. To make changes locally:
+
+1. **Clone the repo** to your computer.
+2. **Install dependencies**: Run `bundle install`.
+3. **Run locally**: Run `bundle exec jekyll serve` to preview changes at `http://localhost:4000`.
+4. **Push to GitHub**: Once you push your changes to the `main` branch, GitHub Actions will automatically rebuild and update the live site.
+
+### Key Files:
+- `index.html`: Update the site title and description here.
+- `_config.yml`: Global site settings.
+- `_includes/`: Contains the header and bottom navigation links.
+- `img/`: Store your wedding photos here.
+
+---
+
+*“We met at SVU, and now we’re here!”* 🐴⚔️
