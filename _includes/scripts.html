@@ -1,8 +1,8 @@
 <!-- jQuery -->
-<script src="js/jquery.js"></script>
+<script src="{{ '/js/jquery.js' | relative_url }}"></script>
 
 <!-- Bootstrap Core JavaScript -->
-<script src="js/bootstrap.min.js"></script>
+<script src="{{ '/js/bootstrap.min.js' | relative_url }}"></script>
 
 <script>
     // Set the date we're counting down to
@@ -32,15 +32,21 @@
         const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
         // Display the results
-        document.getElementById("days").innerText = days.toString().padStart(2, '0');
-        document.getElementById("hours").innerText = hours.toString().padStart(2, '0');
-        document.getElementById("minutes").innerText = minutes.toString().padStart(2, '0');
-        document.getElementById("seconds").innerText = seconds.toString().padStart(2, '0');
-
+        const dEl = document.getElementById("days");
+        const hEl = document.getElementById("hours");
+        const mEl = document.getElementById("minutes");
+        const sEl = document.getElementById("seconds");
+        
+        if (dEl) dEl.innerText = days.toString().padStart(2, '0');
+        if (hEl) hEl.innerText = hours.toString().padStart(2, '0');
+        if (mEl) mEl.innerText = minutes.toString().padStart(2, '0');
+        if (sEl) sEl.innerText = seconds.toString().padStart(2, '0');
+ 
         // If the count down is finished
         if (distance < 0) {
             clearInterval(x);
-            document.getElementById("countdown").innerHTML = "<h3>Just Married!</h3>";
+            const countEl = document.getElementById("countdown");
+            if (countEl) countEl.innerHTML = "<h3>Just Married!</h3>";
         }
     }, 1000);
 </script>

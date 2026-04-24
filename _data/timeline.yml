@@ -19,15 +19,27 @@
   bg_repeat: "no-repeat"
   blurred_mirror: false
 
-- title: "The First Date"
-  date: "September 2024"
-  description: "A simple evening that turned into hours of talking and laughing."
-  image: "img/IMG_0841.JPG"
+- title: "The Red Benches"
+  date: "April 2024"
+  description: >
+    Class canceled one day and we both happened to run into each other in a little nook in Main Hall. We had each gone there to work on homework but got to talk instead. :)
+    We exchanged phone numbers on April 22nd so we could keep in touch.
+  image: "img/red-benches.jpg"
   card_position: middle
   bg_position: "center"
   bg_size: "cover"
   bg_repeat: "no-repeat"
   blurred_mirror: false
+
+- title: "The First Date"
+  date: "September 28 2024"
+  description: "We walked down to Straws to get soda pop, played foosball and Bananagrams, then went to Walnut Fields to launch slingshot light-copters."
+  image: "img/bananagrams-dec1824.jpg"
+  card_position: bottom
+  bg_position: "center"
+  bg_size: "contain"
+  bg_repeat: "no-repeat"
+  blurred_mirror: true
 
 - title: '"You are a 10/10!"'
   date: "October 10 2024"
@@ -41,11 +53,41 @@
   bg_repeat: "no-repeat"
   blurred_mirror: true
 
-- title: "She said Yes!"
+- title: '"On the same page"'
+  date: "October 17 2024"
+  description: "After Joe's choir concert, we walked back to Jocelyn's house and both admitted that we were into each other."
+  image: "img/choir-concert.jpg"
+  card_position: top
+  bg_position: "center"
+  bg_size: "contain"
+  bg_repeat: "no-repeat"
+  blurred_mirror: true
+
+- title: "Visit to Vegas"
+  date: "June-July 2025"
+  description: "Jocelyn met Joe's family in Las Vegas. It was really hot for Jocelyn!"
+  image: "img/kite-date.jpg"
+  card_position: top
+  bg_position: "center"
+  bg_size: "contain"
+  bg_repeat: "no-repeat"
+  blurred_mirror: true
+
+- title: "Visit to Calgary"
   date: "December 2025"
-  description: "The moment we decided on forever."
-  image: "img/IMG_0838.JPG"
+  description: "Joe met Jocelyn's family in Calgary. It was really cold for Joe!"
+  image: "img/sled-crash.jpg"
   card_position: middle
+  bg_position: "center"
+  bg_size: "cover"
+  bg_repeat: "no-repeat"
+  blurred_mirror: false
+
+- title: "Proposal at Big Rock"
+  date: "December 23 2025"
+  description: "After walking around the trail, Joe proposed to Jocelyn at Big Rock."
+  image: "img/big-rock-portrait.JPG"
+  card_position: bottom
   bg_position: "center"
   bg_size: "cover"
   bg_repeat: "no-repeat"

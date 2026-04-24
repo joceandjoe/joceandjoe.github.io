@@ -188,6 +188,7 @@ header {
         position: absolute;
         top: 0;
         height: 100vh;
+        height: 100svh;
         text-align: center;
         padding: 0 15px;
         width: 100%;
@@ -226,7 +227,7 @@ header {
 
             // Position dynamically above the nav bar
             position: absolute;
-            bottom: calc(var(--nav-height) + 60px);
+            bottom: calc(var(--nav-height) + 100px);
             left: 0;
             right: 0;
             margin-top: 0;
@@ -472,6 +473,17 @@ body {
             color: $theme-primary;
         }
     }
+
+    // Desktop only: ensure wrapping links stay perfectly centered
+    @media (min-width: 768px) {
+        .navbar-nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            float: none;
+            width: 100%;
+        }
+    }
 }
 
 // Inner-page hamburger nav (mobile only)
@@ -713,7 +725,7 @@ body {
 }
 
 /* About Page & Snap Scrolling */
-.about-page {
+.our-story-page {
     overflow: hidden; // Prevent double scrollbars
 
     .snap-container {
@@ -951,7 +963,7 @@ body {
 
 /* Mobile adjustments for timeline */
 @media (max-width: 767px) {
-    .about-page .timeline-section {
+    .our-story-page .timeline-section {
         .timeline-bar {
             left: 20px;
         }
