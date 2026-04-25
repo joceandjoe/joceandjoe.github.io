@@ -465,7 +465,7 @@ body {
         color: $theme-dark;
         text-transform: uppercase;
         font-weight: 700;
-        font-size: 12px;
+        font-size: 14px; // Increased for better mobile readability
         letter-spacing: 1px;
         padding: 20px 15px;
 
@@ -477,11 +477,11 @@ body {
     // Desktop only: ensure wrapping links stay perfectly centered
     @media (min-width: 768px) {
         .navbar-nav {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            float: none;
-            width: 100%;
+            display: flex !important;
+            flex-wrap: wrap !important;
+            justify-content: center !important;
+            float: none !important;
+            width: 100% !important;
         }
     }
 }
@@ -835,19 +835,33 @@ body {
         .bg-blur-fill {
             position: absolute;
             inset: -40px; // overshoot to hide blur soft-edges
-            background-size: cover;
-            background-position: center;
+            width: calc(100% + 80px);
+            height: calc(100% + 80px);
+            object-fit: cover;
             filter: blur(28px) brightness(0.9) saturate(1.2);
             z-index: 0;
             pointer-events: none;
         }
 
-        // Layer 2: Main image with overlay.
-        // bg-size / bg-position / bg-repeat are set via inline style from YAML.
+        // Layer 2: Main image.
+        // object-fit / object-position are set via inline style from YAML.
         .bg-main {
             position: absolute;
             inset: 0;
+            width: 100%;
+            height: 100%;
             z-index: 1;
+            pointer-events: none;
+        }
+
+        // Layer 3: Overlay to darken main image for text readability
+        .bg-overlay {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3));
+            z-index: 1; // same as bg-main, but since it comes after in DOM, it sits on top
             pointer-events: none;
         }
 
@@ -914,6 +928,12 @@ body {
     /* Conclusion Section */
     .conclusion-section {
         background-color: #fcfaf7;
+
+        p {
+            font-size: clamp(1.1rem, 3vw, 1.4rem);
+            line-height: 1.8;
+            opacity: 0.9;
+        }
 
         .back-to-top {
             display: inline-flex;

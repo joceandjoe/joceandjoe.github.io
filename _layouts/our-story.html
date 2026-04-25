@@ -28,15 +28,14 @@
         <section class="snap-section timeline-section card-{{ card_pos }}">
             <!-- Blurred mirror fill (visible only when main image leaves gaps) -->
             {% if milestone.blurred_mirror %}
-            <div class="bg-blur-fill" style="background-image: url('{{ milestone.image | relative_url }}');"></div>
+            <img class="bg-blur-fill" src="{{ milestone.image | relative_url }}" loading="lazy" alt="" />
             {% endif %}
             <!-- Main image layer with overlay + custom bg options -->
-            <div class="bg-main" style="
-                background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('{{ milestone.image | relative_url }}');
-                background-size: {{ bg_size }};
-                background-position: {{ bg_pos }};
-                background-repeat: {{ bg_repeat }};
-            "></div>
+            <img class="bg-main" src="{{ milestone.image | relative_url }}" loading="lazy" alt="{{ milestone.title }}" style="
+                object-fit: {{ bg_size }};
+                object-position: {{ bg_pos }};
+            " />
+            <div class="bg-overlay"></div>
             <div class="timeline-bar"></div>
             <div class="content-wrapper">
                 <div class="milestone-card">

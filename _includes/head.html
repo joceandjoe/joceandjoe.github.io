@@ -8,6 +8,11 @@
 
     <title>{{ page.title | default: site.title }}</title>
 
+    <!-- Preload Hero Images for Home Page -->
+    {% if page.layout == 'front' or page.url == '/' %}
+    <link rel="preload" href="{{ '/img/IMG_0841.JPG' | relative_url }}" as="image" media="(max-width: 767px)">
+    <link rel="preload" href="{{ '/img/IMG_0838.JPG' | relative_url }}" as="image" media="(min-width: 768px)">
+    {% endif %}
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="{{ '/css/bootstrap.min.css' | relative_url }}" type="text/css">
 

@@ -11,7 +11,7 @@
 
 - title: "Computer Science Classes"
   date: "Spring 2024"
-  description: "We met in Dr. Griffith's Computer Science classes at Southern Virginia University (SVU). We are both CS majors, so we saw each other every day."
+  description: "We met in Dr. Griffith’s Computer Science classes at Southern Virginia University (SVU). We are both CS majors, so we saw each other every day."
   image: "img/cs-class-screen.jpg"
   card_position: middle
   bg_position: "center"
@@ -41,11 +41,11 @@
   bg_repeat: "no-repeat"
   blurred_mirror: true
 
-- title: '"You are a 10/10!"'
+- title: '“You are a 10/10!”'
   date: "October 10 2024"
   description: >
-    "In honor of the days date, I gave Jocelyn 10 origami stars and a note that said, 
-    'Are you today's date because you are a 10/10!'" —Joe
+    “In honor of the days date, I gave Jocelyn 10 origami stars and a note that said, 
+    ‘Are you today’s date because you are a 10/10!’” —Joe
   image: "img/1010stars.jpg"
   card_position: bottom
   bg_position: "center"
@@ -53,9 +53,9 @@
   bg_repeat: "no-repeat"
   blurred_mirror: true
 
-- title: '"On the same page"'
+- title: '“On the same page”'
   date: "October 17 2024"
-  description: "After Joe's choir concert, we walked back to Jocelyn's house and both admitted that we were into each other."
+  description: "After Joe’s choir concert, we walked back to Jocelyn’s house and both admitted that we were into each other."
   image: "img/choir-concert.jpg"
   card_position: top
   bg_position: "center"
@@ -65,7 +65,7 @@
 
 - title: "Visit to Vegas"
   date: "June-July 2025"
-  description: "Jocelyn met Joe's family in Las Vegas. It was really hot for Jocelyn!"
+  description: "Jocelyn met Joe’s family in Las Vegas. It was really hot for Jocelyn!"
   image: "img/kite-date.jpg"
   card_position: top
   bg_position: "center"
@@ -75,7 +75,7 @@
 
 - title: "Visit to Calgary"
   date: "December 2025"
-  description: "Joe met Jocelyn's family in Calgary. It was really cold for Joe!"
+  description: "Joe met Jocelyn’s family in Calgary. It was really cold for Joe!"
   image: "img/sled-crash.jpg"
   card_position: middle
   bg_position: "center"

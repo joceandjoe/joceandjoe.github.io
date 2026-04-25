@@ -1,0 +1,24 @@
+{
+  "name": "joceandjoe.github.io",
+  "version": "1.0.0",
+  "description": "Welcome! This is the repository for our official wedding website. It is hosted for free using GitHub Pages and was built with love to share our big day with friends and family.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joceandjoe/joceandjoe.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/joceandjoe/joceandjoe.github.io/issues"
+  },
+  "homepage": "https://github.com/joceandjoe/joceandjoe.github.io#readme",
+  "dependencies": {
+    "sharp": "^0.34.5"
+  }
+}
